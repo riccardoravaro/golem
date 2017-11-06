@@ -451,7 +451,7 @@ class TaskHeaderKeeper(object):
             cur_time = get_timestamp_utc()
             if cur_time > t.deadline:
                 logger.warning("Task owned by %s dies, task_id: %s",
-                               t.ownner_key_id, t.task_id)
+                               t.owner_key_id, t.task_id)
                 self.remove_task_header(t.task_id)
 
         for task_id, remove_time in list(self.removed_tasks.items()):
